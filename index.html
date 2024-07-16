@@ -1,1 +1,50 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smishing Samples</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .image-container img {
+      width: 200px;
+      height: auto;
+      margin: 5px;
+      border: 1px solid #ddd;
+      object-fit: cover; /* Scales image to fit while maintaining aspect ratio */
+    }
+    .image-caption {
+      text-align: center;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Image Index</h1>
+  <div class="image-container">
+    <?php // This line is commented out because server-side scripting is not supported
+      // This would normally loop through the images and generate the HTML
+    ?>
+    <img src="account.png" alt="Account Image" class="image">
+    <img src="aws-locked.png" alt="AWS Locked Image" class="image">
+    <img src="contact.png" alt="Contact Image" class="image">
+    <img src="edd-alert.jpg" alt="EDD Alert Image" class="image">
+    <img src="investigation.png" alt="Investigation Image" class="image">
+    <img src="netflix.jpg" alt="Netflix Image" class="image">
+    <img src="order.jpg" alt="Order Image" class="image">
+    <img src="parcel.png" alt="Parcel Image" class="image">
+    <img src="return.png" alt="Return Image" class="image">
+    <img src="won.png" alt="Won Image" class="image">
+  </div>
+</body>
+</html>
