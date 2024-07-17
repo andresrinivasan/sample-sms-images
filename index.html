@@ -28,7 +28,16 @@
     border: none;
     color: black; /* Text color for visibility */
     cursor: pointer; /* Optional: change cursor to pointer on hover */
-  }
+    }
+    .toast {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border-radius: 5px;
+    }
   </style>
 </head>
 <body>
@@ -87,16 +96,5 @@
       }, 2000);
     }
   </script>
-  <style>
-    .toast {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      padding: 10px;
-      background-color: #333;
-      color: white;
-      border-radius: 5px;
-    }
-  </style>
 </body>
 </html>
