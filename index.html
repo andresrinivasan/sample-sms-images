@@ -27,20 +27,80 @@
       text-align: center;
       font-size: 14px;
     }
+    .transparent-button {
+    background-color: transparent;
+    border: none;
+    color: black; /* Text color for visibility */
+    cursor: pointer; /* Optional: change cursor to pointer on hover */
+  }
   </style>
 </head>
 <body>
+  <h1>Click on an image to copy its URL to the clipboard</h1>
   <div class="image-container">
-    <img src="account.png" alt="Account Image">
-    <img src="aws-locked.png" alt="AWS Locked Image">
-    <img src="contact.png" alt="Contact Image">
-    <img src="edd-alert.jpg" alt="EDD Alert Image">
-    <img src="investigation.png" alt="Investigation Image">
-    <img src="netflix.jpg" alt="Netflix Image">
-    <img src="order.jpg" alt="Order Image">
-    <img src="parcel.png" alt="Parcel Image">
-    <img src="return.png" alt="Return Image">
-    <img src="won.png" alt="Won Image">
+    <button class="transparent-button" onclick="copyURL(this)">
+      <img src="account.png" alt="Account Image">
+    </button>
+    <button class="transparent-button" onclick="copyURL(this)">
+      <img src="aws-locked.png" alt="AWS Locked Image">
+    </button>
+    <button class="transparent-button" onclick="copyURL(this)">
+      <img src="contact.png" alt="Contact Image">
+    </button>
+    <button class="transparent-button" onclick="copyURL(this)">
+      <img src="edd-alert.jpg" alt="EDD Alert Image">
+    </button>
+    <button class="transparent-button" onclick="copyURL(this)">
+      <img src="investigation.png" alt="Investigation Image">
+    </button>
+    <button class="transparent-button" onclick="copyURL(this)">
+      <img src="netflix.jpg" alt="Netflix Image">
+    </button>
+    <button class="transparent-button" onclick="copyURL(this)">
+      <img src="order.jpg" alt="Order Image">
+    </button>
+    <button class="transparent-button" onclick="copyURL(this)">
+      <img src="parcel.png" alt="Parcel Image">
+    </button>
+    <button class="transparent-button" onclick="copyURL(this)">
+      <img src="return.png" alt="Return Image">
+    </button>
+    <button class="transparent-button" onclick="copyURL(this)">
+      <img src="won.png" alt="Won Image">
+    </button>
   </div>
+  <script>
+    function copyURL(button) {
+      navigator.clipboard.writeText(button.querySelector("img").src)
+        .then(() => {
+          showToast('Link Copied');
+        })
+        .catch((error) => {
+          console.error('Failed to copy image URL:', error);
+        });
+    }
+
+    function showToast(message) {
+      const toast = document.createElement('div');
+      toast.classList.add('toast');
+      toast.textContent = message;
+      document.body.appendChild(toast);
+
+      setTimeout(() => {
+        toast.remove();
+      }, 2000);
+    }
+  </script>
+  <style>
+    .toast {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+      border-radius: 5px;
+    }
+  </style>
 </body>
 </html>
