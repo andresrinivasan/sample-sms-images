@@ -75,25 +75,24 @@
     </button>
   </div>
   <script>
-    function copyURL(button) {
-      navigator.clipboard.writeText(button.querySelector('img').src)
-        .then(() => {
-          showToast('Link Copied');
-        })
-        .catch((error) => {
-          console.error('Failed to copy image URL:', error);
-        });
+    async function copyURL(button) {
+      try {
+        const src = button.querySelector('img').src;
+        await navigator.clipboard.writeText(src);
+        showToast('Link Copied');
+      } catch (error) {
+        console.error('Failed to copy image URL:', error);
+      }
     }
 
-    function showToast(message) {
+    async function showToast(message) {
       const toast = document.createElement('div');
       toast.classList.add('toast');
       toast.textContent = message;
       document.body.appendChild(toast);
 
-      setTimeout(() => {
-        toast.remove();
-      }, 2000);
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      toast.remove();
     }
   </script>
 </body>
